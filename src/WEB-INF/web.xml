@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+   version="2.5">
+    
+    <description>
+      RuSerBa
+    </description>
+    <display-name>RuSerBa</display-name>
+    
+    <context-param>
+        <param-name>NAME_ROOT</param-name>
+        <param-value>RuSerBa</param-value>
+    </context-param>
+    <context-param>
+        <param-name>HOST_SQL</param-name>
+        <param-value>localhost</param-value>
+    </context-param>
+    <context-param>
+        <param-name>USER_SQL</param-name>
+        <param-value>root</param-value>
+    </context-param>
+    <context-param>
+        <param-name>PASS_SQL</param-name>
+        <param-value></param-value>
+    </context-param>
+    <context-param>
+        <param-name>SQL_NAME</param-name>
+        <param-value>tubes1</param-value>
+    </context-param>
+    
+    <servlet>
+        <servlet-name>Home</servlet-name>
+        <servlet-class>Home</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/Home</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>User</servlet-name>
+        <servlet-class>User</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>User</servlet-name>
+        <url-pattern>/User</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Barang</servlet-name>
+        <servlet-class>Barang</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Barang</servlet-name>
+        <url-pattern>/Barang</url-pattern>
+    </servlet-mapping>
+    
+    <resource-ref>
+      <description>DB Connection</description>
+      <res-ref-name>jdbc/TestDB</res-ref-name>
+      <res-type>javax.sql.DataSource</res-type>
+      <res-auth>Container</res-auth>
+  </resource-ref>
+</web-app>
